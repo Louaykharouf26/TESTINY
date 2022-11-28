@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+#intro{
+  
+    width:100%;
+    height:80vh;
+    background: url("./TestHome.png") top center;
+    background-size:auto;
+    position: relative;
+  
+}
+ h1 {
+
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+ h2 {
+  font-size: 18px;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 5px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  font-family: "Poppins", sans-serif;
+}
