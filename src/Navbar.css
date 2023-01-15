@@ -56,3 +56,9 @@
   .active:hover{
     color: #5fcf80; 
   }
+.log{
+width: 465px;
+height: 50px;
+background: #144692;
+border-radius: 4px;
+}

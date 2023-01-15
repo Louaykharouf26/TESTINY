@@ -39,21 +39,26 @@ function Navbar(){
       <form>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Enter Your Email'></input>
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail2" class="form-label">Confirm E-mail</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp1"></input>
-    <div id="emailHelp1" class="form-text">Confirm The E-mail.</div>
+    <label for="exampleInputEmail2" class="form-label">Enter Your Name </label>
+    <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp1" placeholder='Enter Your Name'></input>
+  
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail2" class="form-label">Enter Your last Name</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp1" placeholder='Enter Your Last Name'></input>
+  
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"></input>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder='Enter Your Password'></input>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword2"></input>
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder='Confirm Your Password'></input>
   </div>
   <div class="mb-3">
   <select class="form-select" aria-label="Default select example">
@@ -63,7 +68,7 @@ function Navbar(){
 
 </select>
   </div>
-  <button type="submit" class="btn btn-primary">Sign Up</button>
+  <button type="submit" class="btn btn-primary log">Sign Up</button>
 </form>
       </div>
       
@@ -82,18 +87,18 @@ function Navbar(){
       <form>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label" >Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required></input>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder='Enter Your Email'></input>
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" required></input>
+    <input type="password" class="form-control" id="exampleInputPassword1" required placeholder='Enter Password'></input>
   </div>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
     <label class="form-check-label" for="exampleCheck1">Remember Me</label>
   </div>
-  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="submit" class="btn btn-primary log">Login</button>
 </form>
       </div>
       

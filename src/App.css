@@ -124,9 +124,11 @@ margin-left: auto;
 margin-right: auto;
 }
 .aboutdesc{
-  font-family: 'Cairo';
+  position:relative;
+  left: 5%;
+  font-family: "Raleway", sans-serif;
 font-style: normal;
-font-weight: 600;
+font-weight: 250;
 font-size: 35px;
 line-height: 66px;
 /* identical to box height */
@@ -154,7 +156,7 @@ border-radius: 15px;
 width: 229px;
 height: 256px;
 left: 40%;
-top: 135%;
+top: 52%;
 background: #FFFFFF;
 box-shadow: 0px 4px 5px 5px rgba(176, 176, 176, 0.25);
 border-radius: 15px;
@@ -164,7 +166,7 @@ border-radius: 15px;
 width: 229px;
 height: 256px;
 left: 65%;
-top: 135%;
+top: 52%;
 
 background: #FFFFFF;
 box-shadow: 0px 4px 5px 5px rgba(176, 176, 176, 0.25);
