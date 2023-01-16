@@ -1,7 +1,46 @@
 import './Navbar.css';
 import Aos from 'aos';
+import { useEffect } from "react";
+import { useRef } from "react";
 function Navbar(){
     Aos.init();
+    const emailRef = useRef();
+      const passwordRef = useRef();
+      const nameRef=useRef();
+      const lastnameRef=useRef();
+    function log()
+    {const requestOptions = {
+            method: "POST",
+            withCredentials: true,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: emailRef.current.value,
+              password: passwordRef.current.value,
+            }),
+          };
+        fetch("http://localhost:3000/user/login",requestOptions)
+        .then((response)=>response.json())
+        .then((data)=>console.log(data));
+    }
+    useEffect(()=>{log()});
+   /* function sign()
+    {const requestOptions = {
+            method: "POST",
+            withCredentials: true,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              username: nameRef.current.value,
+              password: passwordRef.current.value,
+              email: emailRef.current.value,
+              lastname: lastnameRef.current.value,
+            }),
+          }; 
+          fetch("http://localhost:3000/user/register",requestOptions)
+          .then((response)=>response.json())
+          .then((data)=>console.log(data));
+      }
+      useEffect(()=>{sign()});*/
+         
     return(
     <div className="Navbar">
     <nav class="navbar navbar-expand-lg navbar-light ">
@@ -39,22 +78,22 @@ function Navbar(){
       <form>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Enter Your Email'></input>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Enter Your Email' ref={emailRef}></input>
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail2" class="form-label">Enter Your Name </label>
-    <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp1" placeholder='Enter Your Name'></input>
+    <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp1" placeholder='Enter Your Name' ref={nameRef}></input>
   
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail2" class="form-label">Enter Your last Name</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp1" placeholder='Enter Your Last Name'></input>
+    <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp1" placeholder='Enter Your Last Name' ref={lastnameRef}></input>
   
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder='Enter Your Password'></input>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder='Enter Your Password' ref={passwordRef}></input>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
@@ -68,7 +107,7 @@ function Navbar(){
 
 </select>
   </div>
-  <button type="submit" class="btn btn-primary log">Sign Up</button>
+  <button  type="submit" class="btn btn-primary log">Sign Up</button>
 </form>
       </div>
       
@@ -87,18 +126,18 @@ function Navbar(){
       <form>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label" >Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder='Enter Your Email'></input>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder='Enter Your Email' ref={emailRef}></input>
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" required placeholder='Enter Password'></input>
+    <input type="password" class="form-control" id="exampleInputPassword1" required placeholder='Enter Password' ref={passwordRef}></input>
   </div>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
     <label class="form-check-label" for="exampleCheck1">Remember Me</label>
   </div>
-  <button type="submit" class="btn btn-primary log">Login</button>
+  <button onClick={log} type="submit" class="btn btn-primary log">Login</button>
 </form>
       </div>
       
