@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 
 function Login()
-{const usernameRef = useRef();
+{const emailRef = useRef();
     const passwordRef = useRef();
     function log()
     {
@@ -11,7 +11,7 @@ function Login()
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              username: usernameRef.current.value,
+              email: emailRef.current.value,
               password: passwordRef.current.value,
             }),
           };
@@ -22,7 +22,7 @@ function Login()
     useEffect(()=>{log()});
     return(
         <div>
-            <input className="my-2" ref={usernameRef}></input>
+            <input className="my-2" ref={emailRef}></input>
         
         <input className="mt-2" type="password" ref={passwordRef}></input>
         <button onClick={log} type="button" className="btn btn-primary">

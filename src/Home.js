@@ -1,7 +1,7 @@
 import Navbar from './Navbar';
 import Afterlogin from './Afterlogin';
 import courses from './Courses.png';
-
+import './App.css';
 function Home(){
     return(
         <div className="Home">
@@ -9,7 +9,7 @@ function Home(){
             <Navbar/>
       
             <section id="intro">
-      <div class="welcome" data-aos="fade-right">
+      <div class="welcome1" data-aos="fade-right">
                 
                 <h1 class="typewriter">
                 Welcome to Test-Me plateform </h1>
