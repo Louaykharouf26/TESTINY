@@ -12,7 +12,7 @@ function Home(){
       <div class="welcome1" data-aos="fade-right">
                 
                 <h1 class="typewriter">
-                Welcome to Test-Me plateform </h1>
+                Welcome to TESTINY plateform </h1>
                 <h2>
                 Test your skills and become a master
                 </h2>  

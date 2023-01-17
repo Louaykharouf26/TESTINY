@@ -4,6 +4,7 @@ import logo from './student.png';
 import { useEffect ,useState } from "react";
 function Developer(){
   const [user, setUser] = useState({});
+
   const id = localStorage.getItem("id");
   const requestOptions = {
     method: "GET",
@@ -25,7 +26,7 @@ function Developer(){
   <div>
   <header>
 <div class="left_area">
-      <h3>TEST ME</h3>
+      <h3>TESTINY</h3>
     </div>
     <div class="right_area">
       <a href="/" class="logout_btn">Logout</a>
@@ -37,7 +38,7 @@ function Developer(){
 
 <img class="profile_image" src={require('./student.png')}></img>
       <h4>{user.username} {user.lastname}</h4>
-      <h6 >{user.roles}</h6>
+      <h6 >{user.role==="1" ? 'Recruiter' : 'Developer'}</h6>
 
     </center>
 <a href="/profile/developer"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>

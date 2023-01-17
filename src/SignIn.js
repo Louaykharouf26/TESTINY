@@ -4,7 +4,9 @@ import {  useLocatiion ,useNavigate } from "react-router-dom";
 function SignIn()
 {const emailRef = useRef();
     const passwordRef = useRef();
+    const roleRef=useRef();
     const navigate = useNavigate();
+    //const rolelog = localStorage.getItem("role")
   function log()
   {const requestOptions = {
           method: "POST",
@@ -13,18 +15,32 @@ function SignIn()
           body: JSON.stringify({
             email: emailRef.current.value,
             password: passwordRef.current.value,
+            role:roleRef.current.value,
           }),
         };
-      fetch("http://localhost:3000/recruiter/login",requestOptions)
-      .then((response)=>response.json())
-      .then((data)=>{console.log(data);
-        if(data.role==="Recruiter")
-         {navigate("/profile/recruiter");}
-        if (data.role==="Developer"){navigate("/profile/developer");} 
-     localStorage.setItem("id",data.id);
-    }
+        //console.log(rolelog)
+        if(roleRef.current.value==="1"){ fetch("http://localhost:3000/recruiter/login",requestOptions)
+        .then((response)=>response.json())
+        .then((data)=>{console.log(data);
+           navigate("/profile/recruiter");
+         
+       localStorage.setItem("id",data.id);
+    
+      })
 
-     );
+    }
+    if(roleRef.current.value==="2"){fetch("http://localhost:3000/user/login",requestOptions)
+    .then((response)=>response.json())
+    .then((data)=>{console.log(data);
+       navigate("/profile/developer");
+   localStorage.setItem("id",data.id);
+
+
+  })}
+        console.log(roleRef
+          .current.value)
+
+    
 
   }
   async function countusers(){
@@ -46,20 +62,24 @@ function SignIn()
 </p>
 <p class="signdesc">Create an account and discover the potential of the services you use. Your account gives you more options by personalizing your experience and giving you easy access to your most important information.</p>
   
-           <div class="container" id="signinbx">
+   <div class="container" id="signinbx">
 
-<p class="welcome">Welcome to <span class="Test">Test Me</span></p> 
-<p class="Sin">Sign in</p>
-<p class="NA">No Account ?</p>
-<a href="/SignUp" class="signUp" >Sign up</a>
-<label for="staticEmail" class="form-label" id="label1" >Email address</label>
+    <p class="welcome">Welcome to <span class="Test">TESTINY</span></p> 
+    <p class="Sin">Sign in</p>
+    <p class="NA">No Account ?</p>
+    <a href="/SignUp" class="signUp" >Sign up</a>
+    <label for="staticEmail" class="form-label" id="label1" >Email address</label>
     <input type="email" class="form-control" id="staticEmail" aria-describedby="emailHelp" required placeholder='Enter Your Email' ref={emailRef} ></input>
     <label for="inputPassword" class="form-label" id="label2">Password</label>
     <input type="password" class="form-control" id="inputPassword"  required placeholder='Enter Password' ref={passwordRef}></input>
     <div class="mb-3 form-check remember">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
-    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+    <select className="form-select" aria-label="Default select example" id="serviceprovider1" ref={roleRef}>
+  <option selected>Sign Up as </option>
+  <option value="1">Recruiter</option>
+  <option value="2">Developer</option>
+</select>
   </div>
+
   <button onClick={log} type="submit" class="btn btn-primary log" id="signbtn">Login</button>
 </div>
 </div>);

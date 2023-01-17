@@ -45,7 +45,7 @@ function Exam(){
   <div>
   <header>
 <div class="left_area">
-      <h3>TEST ME</h3>
+      <h3>TESTINY</h3>
     </div>
     <div class="right_area">
       <a href="/" class="logout_btn">Logout</a>

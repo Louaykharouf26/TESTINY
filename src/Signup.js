@@ -22,22 +22,33 @@ function Signup()
                 roles:roleRef.current.value,
             }),
           };
-        fetch("http://localhost:3000/user/register",requestOptions)
+          console.log(roleRef.current.value);
+          if(roleRef.current.value==="2"){fetch("http://localhost:3000/user/register",requestOptions)
         .then((response)=>response.json())
-        .then((data)=>{console.log(data);
-       if(data.roles==="1")
-        {navigate("/profile/recruiter");}
-       if (data.roles==="2"){navigate("/profile/developer");} 
-    });
+      .then((data)=>{console.log(data);localStorage.setItem("id",data.id);
+      localStorage.setItem("role",data.roles)
+      
+    })
+      
+      navigate("/SignIn");
+      
     }
-    //useEffect(()=>{Sign()});
+    if(roleRef.current.value==="1"){fetch("http://localhost:3000/recruiter/register",requestOptions)
+        .then((response)=>response.json())
+      .then((data)=>{console.log(data);localStorage.setItem("id",data.id);
+    
+    })
+      
+      navigate("/SignIn");
+    }
+    }
     return(<div className="SignUp" id="intro">
 <p className="sign">Sign Up to <br/> 
    <span className="account">Our Website </span>
 </p>
 <p className="signdesc">Create an account and discover the potential of the services you use. Your account gives you more options by personalizing your experience and giving you easy access to your most important information.</p>
            <div className="container" id="signinbx">
- <p className="welcome">Welcome to <span className="Test">Test Me</span></p> 
+ <p className="welcome">Welcome to <span className="Test">TESTINY</span></p> 
  <p className="Sup">Sign Up</p>
  <p className="NA1">Have an Account ?</p>
  <a href="/SignIn" className="signUp">Sign in</a>

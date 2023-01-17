@@ -26,7 +26,7 @@ function Recruiter(){
        //console.log(jsoncounter);
       setUser(jsonResult);
       setData(jsoncounter);
-      console.log(data);
+      console.log(user);
     }
     fetchdata();
   },[])
@@ -36,7 +36,7 @@ function Recruiter(){
   <div>
   <header>
 <div className="left_area">
-      <h3>TEST ME</h3>
+      <h3>TESTINY</h3>
     </div>
     <div className="right_area">
       <a href="/" className="logout_btn">Logout</a>
@@ -48,7 +48,7 @@ function Recruiter(){
 
 <img className="profile_image" src={require('./teacher.png')}></img>
       <h4>{user.username} {user.lastname}</h4>
-      <h6 >{user.roles}</h6>
+      <h6 >{data.role==="1" ? 'developer' : 'recruiter'}</h6>
 
     </center>
 <a href="/profile/recruiter"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
