@@ -1,8 +1,10 @@
 import './Signup.css';
 import { useRef ,useEffect } from 'react';
+import {  useLocatiion ,useNavigate } from "react-router-dom";
 function SignIn()
 {const emailRef = useRef();
     const passwordRef = useRef();
+    const navigate = useNavigate();
   function log()
   {const requestOptions = {
           method: "POST",
@@ -13,11 +15,31 @@ function SignIn()
             password: passwordRef.current.value,
           }),
         };
-      fetch("http://localhost:3000/user/login",requestOptions)
+      fetch("http://localhost:3000/recruiter/login",requestOptions)
       .then((response)=>response.json())
-      .then((data)=>console.log(data));
+      .then((data)=>{console.log(data);
+        if(data.role==="Recruiter")
+         {navigate("/profile/recruiter");}
+        if (data.role==="Developer"){navigate("/profile/developer");} 
+     localStorage.setItem("id",data.id);
+    }
+
+     );
+
   }
-  useEffect(()=>{log()});
+  async function countusers(){
+    const requestOptions2 = {
+      method: "GET",
+      
+     // withCredentials: true,
+      //headers: { "Content-Type": "application/json" },
+     //data: formData,
+    }
+    const response = await fetch('http://localhost:3000/user/count',requestOptions2)
+      console.log(response);
+  }
+
+ // useEffect(()=>{log()});
     return(<div className="SignIn" id="intro">
         <p class="sign">Sign in to  <br/> 
    <span class="account">Your Account</span>
