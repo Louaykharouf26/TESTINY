@@ -22,7 +22,7 @@ a:link {
         background: #663a30;
       }
     center h6{
-      color: white;
+      color: #3F3F3F;
     }
   
       .card {
@@ -46,8 +46,9 @@ a:link {
         font-size: 26px;
       }
       .fas {
-        color: white;
+        color: black;
       }
+      
   
       .f-left {
         float: left;
@@ -63,7 +64,9 @@ a:link {
      a:link {
       text-decoration: none;
     }
-
+    .Dash{
+      color: black;
+    }
     body {
       margin: 0;
       padding: 0;
@@ -110,7 +113,7 @@ a:link {
     }
 
     .sidebar {
-      background: #2f323a;
+     
       margin-top: 70px;
       padding-top: 30px;
       position: fixed;
@@ -129,13 +132,13 @@ a:link {
     }
 
     .sidebar h4 {
-      color: #ccc;
+      color: #000000;
       margin-top: 0;
       
     }
 
     .sidebar a {
-      color: #fff;
+      color: #F5F5F5;
       display: block;
       width: 100%;
       line-height: 60px;
@@ -151,9 +154,6 @@ a:link {
     }
 
 
-    .sidebar a:hover {
-      background: #19B3D3;
-    }
 
     .sidebar i {
       padding-right: 10px;

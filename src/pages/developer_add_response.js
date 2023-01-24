@@ -40,9 +40,8 @@ function Addresponse(){
       <h6 >{user.role==="1" ? 'Recruiter' : 'Developer'}</h6>
 
     </center>
-<a href="/profile/developer"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
-    <a href="/student/examslist"><i class="fas fa-book"></i><span>Exams List</span></a>
-    <a href="/student/submit"><i class="fas fa-sort-numeric-up"></i><span>Submit Response</span></a>
+<a href="/profile/developer"><i class="fas fa-tachometer-alt"></i><span className="Dash">Dashboard</span></a>
+    <a href="/student/examslist"><i class="fas fa-book"></i><span className="Dash">Exams List</span></a>
   </div>
 
  <br/><br/><br/><br/>

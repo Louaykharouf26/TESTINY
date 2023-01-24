@@ -1,6 +1,6 @@
 import './Signup.css';
 import { useRef ,useEffect } from 'react';
-import {  useLocatiion ,useNavigate } from "react-router-dom";
+import {  redirect, useLocatiion ,useNavigate } from "react-router-dom";
 function SignIn()
 {const emailRef = useRef();
     const passwordRef = useRef();
@@ -22,25 +22,19 @@ function SignIn()
         if(roleRef.current.value==="1"){ fetch("http://localhost:3000/recruiter/login",requestOptions)
         .then((response)=>response.json())
         .then((data)=>{console.log(data);
-           navigate("/profile/recruiter");
-         
-       localStorage.setItem("id",data.id);
-    
+       localStorage.setItem("id",data.id); 
+       navigate("/profile/recruiter");    
       })
-
     }
     if(roleRef.current.value==="2"){fetch("http://localhost:3000/user/login",requestOptions)
     .then((response)=>response.json())
     .then((data)=>{console.log(data);
-       navigate("/profile/developer");
+      navigate("/profile/developer");
    localStorage.setItem("id",data.id);
-
 
   })}
         console.log(roleRef
           .current.value)
-
-    
 
   }
   async function countusers(){
@@ -74,7 +68,7 @@ function SignIn()
     <input type="password" class="form-control" id="inputPassword"  required placeholder='Enter Password' ref={passwordRef}></input>
     <div class="mb-3 form-check remember">
     <select className="form-select" aria-label="Default select example" id="serviceprovider1" ref={roleRef}>
-  <option selected>Sign Up as </option>
+  <option selected>Sign In as </option>
   <option value="1">Recruiter</option>
   <option value="2">Developer</option>
 </select>

@@ -30,7 +30,10 @@ function Recruiter(){
     }
     fetchdata();
   },[])
-
+  const logout =()=>{
+    localStorage.removeItem("id");
+    
+   }
   
   return(
   <div>
@@ -39,7 +42,7 @@ function Recruiter(){
       <h3>TESTINY</h3>
     </div>
     <div className="right_area">
-      <a href="/" className="logout_btn">Logout</a>
+      <a href="/" className="logout_btn" onClick={logout}>Logout</a>
     </div>
     </header>
   <div className="sidebar">
@@ -51,9 +54,8 @@ function Recruiter(){
       <h6 >{data.role==="1" ? 'developer' : 'recruiter'}</h6>
 
     </center>
-<a href="/profile/recruiter"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
-    <a href="/recruiter/addexam"><i className="fas fa-book"></i><span>Add Exam</span></a>
-    <a href="/recruiter/examslist"><i className="fas fa-sort-numeric-up"></i><span>Exams List</span></a>
+<a href="/profile/recruiter"><i className="fas fa-tachometer-alt"></i><span className="Dash">Dashboard</span></a>
+    <a href="/recruiter/addexam"><i className="fas fa-book"></i><span className="Dash">Add Exam</span></a>
   </div>
 
  <br/><br/><br/><br/>

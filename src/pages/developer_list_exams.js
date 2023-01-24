@@ -2,9 +2,12 @@ import React from "react";
 import './developer_list_exams.css';
 import logo from './student.png';
 import { useState,useEffect } from "react";
+import Quiz from "./Quiz";
+import './quizimage.png'
 function Listdeveloper(){
   const [user, setUser] = useState({});
   const id = localStorage.getItem("id");
+  
   const requestOptions = {
     method: "GET",
     withCredentials: true,
@@ -21,6 +24,10 @@ function Listdeveloper(){
     }
     fetchdata();
   },[])
+  const logout =()=>{
+    localStorage.removeItem("id");
+    
+   }
   return(
   <div>
   <header>
@@ -28,7 +35,7 @@ function Listdeveloper(){
       <h3>TESTINY</h3>
     </div>
     <div class="right_area">
-      <a href="/" class="logout_btn">Logout</a>
+      <a href="/" class="logout_btn" onClick={logout}>Logout</a>
     </div>
     </header>
   <div class="sidebar">
@@ -40,35 +47,67 @@ function Listdeveloper(){
       <h6 >{user.role==="1" ? 'Recruiter' : 'Developer'}</h6>
 
     </center>
-<a href="/profile/developer"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
-    <a href="/student/examslist"><i class="fas fa-book"></i><span>Exams List</span></a>
-    <a href="/student/submit"><i class="fas fa-sort-numeric-up"></i><span>Submit Response</span></a>
+<a href="/profile/developer"><i class="fas fa-tachometer-alt"></i><span className="Dash">Dashboard</span></a>
+    <a href="/student/examslist"><i class="fas fa-book"></i><span className="Dash">Exams List</span></a>
   </div>
 
  <br/><br/><br/><br/>
 
 <br/><br/>
-  <div class="container2">
-  <h2> EXAMS </h2>
-  <br/><br/>
-    <ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Exam N°1
-    <a class="badge badge-primary badge-pill">Take the exam</a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Exam N°2
-    <a  class="badge badge-primary badge-pill">Take the exam </a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Exam N°3
-    <a class="badge badge-primary badge-pill">Take the exam</a>
-  </li>
-</ul>
+<div class="container2">
+  <div className="exam1">
+    <div className="bx1">
+      <img class="quizimage" src={require('./quizimage.png')}></img>
+    <p class="Q1">Quiz n°1 </p>
+  <div class="rating">
+    <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+</div>
+    </div>
+    <div className="description">
+  This quiz is made to test your basic skills on javascript
+    </div>
+    <div className="buttons">
+    <a href="http://127.0.0.1:5000/js "target="_blank"><button type="button" class="btn take-btn" >Take the exam</button></a>
+    </div>
   </div>
- <br/><br/><br/><br/>
+  <div className="exam2">
+    <div className="bx1">
+      <img class="quizimage" src={require('./quizimage.png')}></img>
+    <p class="Q1">Quiz n°2 </p>
+  <div class="rating">
+    <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+
+</div>
+    </div>
+    <div className="description">
+  This quiz is made to test your basic skills on CSS
+    </div>
+    <div className="buttons">
+    <a href='http://127.0.0.1:5000/css'target="_blank"><button type="button" class="btn take-btn2" >Take the exam</button></a>
+    </div>
+  </div>
+  <div className="exam3">
+    <div className="bx1">
+      <img class="quizimage" src={require('./quizimage.png')}></img>
+    <p class="Q1">Quiz n°3 </p>
+  <div class="rating">
+    <span class="fa fa-star checked"></span>
 
 
+</div>
+    </div>
+    <div className="description">
+  This quiz is made to test your basic skills on HTML
+    </div>
+    <div className="buttons">
+    <a href='http://127.0.0.1:5000/html 'target="_blank"><button type="button" class="btn take-btn2" >Take the exam</button></a>
+    </div>
+  </div>
+
+</div>
 
 
     </div>

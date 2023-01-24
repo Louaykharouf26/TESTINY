@@ -22,7 +22,7 @@
         background: #663a30;
       }
     center h6{
-      color: white;
+      color: #3F3F3F;
     }
   
       .card {
@@ -46,9 +46,12 @@
         font-size: 26px;
       }
       .fas {
-        color: white;
+        color: black;
       }
   
+      .Dash{
+        color: black;
+      }
       .f-left {
         float: left;
       }
@@ -109,12 +112,10 @@
 
     }
 
-    .logout_btn:hover {
-      background: #0B87A6;
-    }
+  
 
     .sidebar {
-      background: #2f323a;
+     
       margin-top: 70px;
       padding-top: 30px;
       position: fixed;
@@ -139,7 +140,7 @@
     }
 
     .sidebar a {
-      color: #fff;
+      color: #F5F5F5;
       display: block;
       width: 100%;
       line-height: 60px;
@@ -155,9 +156,7 @@
     }
 
 
-    .sidebar a:hover {
-      background: #19B3D3;
-    }
+   
 
     .sidebar i {
       padding-right: 10px;

@@ -35,12 +35,16 @@ function Exam(){
   }
   useEffect(()=>{
     const fetchdata = async () => {
-      const result = await fetch(`http://localhost:3000/user/showById/${id}`,requestOptions);
+      const result = await fetch(`http://localhost:3000/recruiter/showById/${id}`,requestOptions);
       const jsonResult = await result.json();
       setUser(jsonResult);
     }
     fetchdata();
   },[])
+  const logout =()=>{
+    localStorage.removeItem("id");
+    
+   }
   return(
   <div>
   <header>
@@ -48,7 +52,7 @@ function Exam(){
       <h3>TESTINY</h3>
     </div>
     <div class="right_area">
-      <a href="/" class="logout_btn">Logout</a>
+      <a href="/" class="logout_btn" onClick={logout}>Logout</a>
     </div>
     </header>
   <div class="sidebar">
@@ -57,12 +61,10 @@ function Exam(){
 
 <img class="profile_image" src={require('./teacher.png')}></img>
       <h4>{user.username} {user.lastname}</h4>
-      <h6 >{user.roles}</h6>
-
+      <h6 >{user.role==="1" ? 'developer' : 'recruiter'}</h6>
     </center>
-<a href="/profile/recruiter"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
-    <a href="/recruiter/addexam"><i class="fas fa-book"></i><span>Add Exam</span></a>
-    <a href="/recruiter/examslist"><i class="fas fa-sort-numeric-up"></i><span>Exams List</span></a>
+<a href="/profile/recruiter"><i class="fas fa-tachometer-alt"></i><span className="Dash">Dashboard</span></a>
+    <a href="/recruiter/addexam"><i class="fas fa-book"></i><span className="Dash">Add Exam</span></a>
   </div>
 
  <br/><br/><br/><br/>

@@ -2,6 +2,7 @@ import './Navbar.css';
 import Aos from 'aos';
 import { useEffect } from "react";
 import { useRef } from "react";
+import { NavLink } from 'react-router-dom';
 function Navbar(){
     Aos.init();
   
@@ -15,10 +16,29 @@ function Navbar(){
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Training </a>
-        <a class="nav-link" href="#">Technical Test</a>
+      <NavLink to={'/'} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "active"
+                        : isPending
+                        ? "pending"
+                        : ""
+                    }> 
+        <a class="nav-link" aria-current="page" href="#">Home</a></NavLink>
+        <NavLink to={'/training'} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "active"
+                        : isPending
+                        ? "pending"
+                        : ""
+                    }>
+        <a class="nav-link" href="#">Training </a></NavLink>
+        <NavLink to={'/quiz'} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "active"
+                        : isPending
+                        ? "pending"
+                        : ""
+                    }> <a class="nav-link" href="#">Technical Test</a></NavLink>
         
         <div class="left">
         <a href='/SignUp'><button type="button" class="btn signup-btn" >Sign Up</button></a>

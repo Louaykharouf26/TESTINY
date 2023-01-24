@@ -22,6 +22,10 @@ function Developer(){
     }
     fetchdata();
   },[])
+  const logout =()=>{
+    localStorage.removeItem("id");
+    
+   }
   return(
   <div>
   <header>
@@ -29,7 +33,7 @@ function Developer(){
       <h3>TESTINY</h3>
     </div>
     <div class="right_area">
-      <a href="/" class="logout_btn">Logout</a>
+      <a href="/" class="logout_btn" onClick={logout}>Logout</a>
     </div>
     </header>
   <div class="sidebar">
@@ -41,9 +45,8 @@ function Developer(){
       <h6 >{user.role==="1" ? 'Recruiter' : 'Developer'}</h6>
 
     </center>
-<a href="/profile/developer"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
-    <a href="/student/examslist"><i class="fas fa-book"></i><span>Exams List</span></a>
-    <a href="/student/submit"><i class="fas fa-sort-numeric-up"></i><span>Submit Response</span></a>
+<a href="/profile/developer"><i class="fas fa-tachometer-alt"></i><span class="Dash">Dashboard</span></a>
+    <a href="/student/examslist"><i class="fas fa-book"></i><span class="Dash">Exams List</span></a>
   </div>
 
  <br/><br/><br/><br/>
@@ -58,7 +61,7 @@ function Developer(){
           <div class="card-block">
               <h6 class="m-b-20">Total Exams Available</h6>
 
-            <h2 class="text-right"><i class="fas fa-book f-left"></i><span>0 </span></h2>
+            <h2 class="text-right"><i class="fas fa-book f-left"></i><span>3 </span></h2>
 
             
           </div>
@@ -69,7 +72,7 @@ function Developer(){
         <div class="card bg-c-blue order-card">
           <div class="card-block">
             <h6 class="m-b-20">Total Questions</h6>
-            <h2 class="text-right"><i class="fas fa-question-circle f-left"></i><span>0</span></h2>
+            <h2 class="text-right"><i class="fas fa-question-circle f-left"></i><span>8</span></h2>
             
           </div>
         </div>
